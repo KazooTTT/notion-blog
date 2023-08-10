@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^18.8.5
     version: 18.17.3
   '@types/react':
-    specifier: ^18.0.21
-    version: 18.2.18
+    specifier: ^18.2.20
+    version: 18.2.20
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.40.0
     version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.46.0)(typescript@4.9.5)
@@ -775,8 +775,8 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react@18.2.18:
-    resolution: {integrity: sha512-da4NTSeBv/P34xoZPhtcLkmZuJ+oYaCxHmyHzwaDQo9RQPBeXV+06gEk2FpqEcsX9XrnNLvRpVh6bdavDSjtiQ==}
+  /@types/react@18.2.20:
+    resolution: {integrity: sha512-WKNtmsLWJM/3D5mG4U84cysVY31ivmyw85dE84fOCk5Hx78wezB/XEjVPWl2JTZ5FkEeaTJf+VgUAUn3PE7Isw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -2814,7 +2814,7 @@ packages:
   /merge-refs@1.2.1:
     resolution: {integrity: sha512-pRPz39HQz2xzHdXAGvtJ9S8aEpNgpUjzb5yPC3ytozodmsHg+9nqgRs7/YOmn9fM/TLzntAC8AdGTidKxOq9TQ==}
     dependencies:
-      '@types/react': 18.2.18
+      '@types/react': 18.2.20
     dev: false
 
   /merge-stream@2.0.0:
