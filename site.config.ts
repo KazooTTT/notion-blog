@@ -76,6 +76,6 @@ export default siteConfig({
     inputPosition: 'bottom',
     theme: 'preferred_color_scheme',
     lang: 'zh-CN',
-    lazy: true
+    loading: 'lazy'
   }
 })
