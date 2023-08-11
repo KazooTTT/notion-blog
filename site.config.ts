@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'KazooTTT Blog',
-  domain: 'blog.kazoottt.top',
+  domain: 'kazoottt.top',
   author: 'KazooTTT',
 
   // open graph metadata (optional)
