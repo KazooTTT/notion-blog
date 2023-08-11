@@ -1,3 +1,4 @@
+import { lazy } from 'react'
 import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
@@ -50,7 +51,7 @@ export default siteConfig({
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
+  navigationStyle: 'default',
   // navigationStyle: 'custom',
   // navigationLinks: [
   //   {
@@ -62,4 +63,19 @@ export default siteConfig({
   //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
   //   }
   // ]
+
+  giscusProps: {
+    repo: 'kazoottt/notion-blog',
+    repoId: 'R_kgDOKEsy1g',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOKEsy1s4CYiQt',
+    mapping: 'pathname',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'bottom',
+    theme: 'preferred_color_scheme',
+    lang: 'zh-CN',
+    lazy: true
+  }
 })

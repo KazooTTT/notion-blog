@@ -4,6 +4,7 @@
  * This file pulls from the root "site.config.ts" as well as environment variables
  * for optional depenencies.
  */
+import { GiscusProps } from '@giscus/react'
 import { parsePageId } from 'notion-utils'
 import { PostHogConfig } from 'posthog-js'
 
@@ -109,6 +110,11 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
   null
 )
 
+export const giscusProps: GiscusProps | null = getSiteConfig(
+  'giscusProps',
+  null
+)
+
 // Optional site search
 export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', true)
 
@@ -171,6 +177,8 @@ export const posthogId = process.env.NEXT_PUBLIC_POSTHOG_ID
 export const posthogConfig: Partial<PostHogConfig> = {
   api_host: 'https://app.posthog.com'
 }
+
+
 
 function cleanPageUrlMap(
   pageUrlMap: PageUrlOverridesMap,

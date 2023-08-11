@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
+import Comment from '@/components/Comment'
 
 import { NotionPage } from '@/components/NotionPage'
 import { domain, isDev } from '@/lib/config'
@@ -50,5 +51,10 @@ export async function getStaticPaths() {
 }
 
 export default function NotionDomainDynamicPage(props) {
-  return <NotionPage {...props} />
+  return (
+    <>
+      <NotionPage {...props} />
+      <Comment />
+    </>
+  )
 }

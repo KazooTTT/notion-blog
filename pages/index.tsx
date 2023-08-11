@@ -3,6 +3,7 @@ import * as React from 'react'
 import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
+import Comment from '@/components/Comment'
 
 export const getStaticProps = async () => {
   try {
@@ -19,5 +20,10 @@ export const getStaticProps = async () => {
 }
 
 export default function NotionDomainPage(props) {
-  return <NotionPage {...props} />
+  return (
+    <>
+      <NotionPage {...props} />
+      <Comment />
+    </>
+  )
 }

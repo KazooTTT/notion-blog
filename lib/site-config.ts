@@ -1,3 +1,4 @@
+import { GiscusProps } from '@giscus/react'
 import * as types from './types'
 
 export interface SiteConfig {
@@ -16,7 +17,7 @@ export interface SiteConfig {
   newsletter?: string
   youtube?: string
   zhihu?: string
-  mastodon?: string;
+  mastodon?: string
 
   defaultPageIcon?: string | null
   defaultPageCover?: string | null
@@ -33,6 +34,8 @@ export interface SiteConfig {
 
   navigationStyle?: types.NavigationStyle
   navigationLinks?: Array<NavigationLink>
+
+  giscusProps?: GiscusProps
 }
 
 export interface NavigationLink {
