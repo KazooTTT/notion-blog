@@ -28,7 +28,7 @@
     "@fisch0920/use-dark-mode": "^2.4.0",
     "@giscus/react": "^2.3.0",
     "@keyvhq/core": "^1.6.26",
-    "@keyvhq/redis": "^1.6.28",
+    "@keyvhq/redis": "^2.0.0",
     "@react-icons/all-files": "^4.1.0",
     "@vercel/analytics": "^1.0.2",
     "@vercel/og": "^0.5.13",
