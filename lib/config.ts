@@ -227,3 +227,8 @@ function invertPageUrlOverrides(
     }
   }, {})
 }
+
+
+export const logDebug = false
+
+export const showGithubShareButton = false
