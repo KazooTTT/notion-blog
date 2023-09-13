@@ -117,36 +117,26 @@
   color: #777777;
 }
 
-.comments {
-  width: 100%;
-  margin-top: 2em;
-  border-top: 1px solid var(--fg-color-0);
-}
-
-.giscus-comments{
-  padding: 0 64px;
-}
 
 @media only screen and (max-width: 566px) {
   .footer {
     flex-direction: column;
   }
 
-  .footer > div {
+  .footer>div {
     margin-top: 1em;
   }
 
   .footer .settings {
     order: 1;
   }
+
   .footer .social {
     order: 2;
   }
+
   .footer .copyright {
     order: 3;
-  }
-  .giscus-comments{
-    padding: 0 16px;
   }
 }
 
@@ -197,14 +187,17 @@
 }
 
 @keyframes octocat-wave {
+
   0%,
   100% {
     transform: rotate(0);
   }
+
   20%,
   60% {
     transform: rotate(-25deg);
   }
+
   40%,
   80% {
     transform: rotate(10deg);
