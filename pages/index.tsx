@@ -23,7 +23,7 @@ export default function NotionDomainPage(props) {
   return (
     <>
       <NotionPage {...props} />
-      <Comment />
+      {/* <Comment /> */}
     </>
   )
 }
