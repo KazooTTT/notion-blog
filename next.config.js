@@ -24,7 +24,7 @@ module.exports = withBundleAnalyzer({
 
 // Injected content via Sentry wizard below
 
-import { withSentryConfig } from "@sentry/nextjs"
+const { withSentryConfig } = require('@sentry/nextjs')
 
 module.exports = withSentryConfig(
   module.exports,
