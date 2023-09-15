@@ -6,16 +6,36 @@ import { ImageResponse } from '@vercel/og'
 import { api, apiHost, rootNotionPageId } from '@/lib/config'
 import { NotionPageInfo } from '@/lib/types'
 
-const interRegularFontP = fetch(
-  new URL('../../public/fonts/Inter-Regular.ttf', import.meta.url)
-).then((res) => res.arrayBuffer())
-
-const interBoldFontP = fetch(
-  new URL('../../public/fonts/Inter-SemiBold.ttf', import.meta.url)
-).then((res) => res.arrayBuffer())
-
 export const config = {
   runtime: 'edge'
+}
+// Pulled from the OG playground code
+async function fetchFont(
+  text: string,
+  font: string
+): Promise<ArrayBuffer | null> {
+  const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(
+    text
+  )}`
+
+  const css = await (
+    await fetch(API, {
+      headers: {
+        // Make sure it returns TTF.
+        'User-Agent':
+          'Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+'
+      }
+    })
+  ).text()
+
+  const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)
+
+  console.log('css', css)
+  if (!resource) return null
+
+  const res = await fetch(resource[1])
+
+  return res.arrayBuffer()
 }
 
 export default async function OGImage(req: NextRequest) {
@@ -36,11 +56,11 @@ export default async function OGImage(req: NextRequest) {
     return new Response(pageInfoRes.statusText, { status: pageInfoRes.status })
   }
   const pageInfo: NotionPageInfo = await pageInfoRes.json()
-  console.log(pageInfo)
+  const { title, author, detail } = pageInfo
 
-  const [interRegularFont, interBoldFont] = await Promise.all([
-    interRegularFontP,
-    interBoldFontP
+  const [notoSansScFont, notoSansScFontBold] = await Promise.all([
+    fetchFont([title, author, detail].join(' '), 'Noto+Sans+SC'),
+    fetchFont(pageInfo.title, 'Noto+Sans+SC:wght@700')
   ])
 
   return new ImageResponse(
@@ -163,13 +183,13 @@ export default async function OGImage(req: NextRequest) {
       fonts: [
         {
           name: 'Inter',
-          data: interRegularFont,
+          data: notoSansScFont,
           style: 'normal',
           weight: 400
         },
         {
           name: 'Inter',
-          data: interBoldFont,
+          data: notoSansScFontBold,
           style: 'normal',
           weight: 700
         }
