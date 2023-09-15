@@ -5,6 +5,8 @@ import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const NEXT_PUBLIHC_BAIDU_ID = process.env.NEXT_PUBLIHC_BAIDU_ID
+  const GOOGLE_ADS_CLIENT_ID = process.env.GOOGLE_ADS_CLIENT_ID
+
   return (
     <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
       <Html lang='en'>
@@ -13,6 +15,13 @@ export default function Document() {
           <link rel='icon' type='image/png' sizes='32x32' href='favicon.png' />
 
           <link rel='manifest' href='/manifest.json' />
+          {GOOGLE_ADS_CLIENT_ID && (
+            <script
+              async
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADS_CLIENT_ID}`}
+              crossOrigin='anonymous'
+            />
+          )}
           {NEXT_PUBLIHC_BAIDU_ID && (
             <script
               dangerouslySetInnerHTML={{
