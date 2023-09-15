@@ -1,6 +1,6 @@
 // global styles shared across the entire site
 import * as React from 'react'
-import type { AppProps } from 'next/app'
+import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
@@ -29,9 +29,24 @@ import {
   posthogId
 } from '@/lib/config'
 import { Analytics } from '@vercel/analytics/react'
+import { GoogleAnalytics, event } from 'nextjs-google-analytics'
 
 if (!isServer) {
   bootstrap()
+}
+
+export function reportWebVitals({
+  id,
+  name,
+  label,
+  value
+}: NextWebVitalsMetric) {
+  event(name, {
+    category: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+    value: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+    label: id, // id unique to current page load
+    nonInteraction: true // avoids affecting bounce rate.
+  })
 }
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -67,6 +82,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Component {...pageProps} />
       <Analytics />
+      <GoogleAnalytics trackPageViews />
     </>
   )
 }
