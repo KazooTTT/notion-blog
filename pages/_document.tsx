@@ -1,43 +1,37 @@
 import * as React from 'react'
-import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { IconContext } from '@react-icons/all-files'
-const NEXT_PUBLIHC_BAIDU_ID = process.env.NEXT_PUBLIHC_BAIDU_ID
+import { Head, Html, Main, NextScript } from 'next/document'
 
-export default class MyDocument extends Document {
-  render() {
-    return (
-      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
-        <Html lang='en'>
-          <Head>
-            <link rel='shortcut icon' href='/favicon.ico' />
-            <link
-              rel='icon'
-              type='image/png'
-              sizes='32x32'
-              href='favicon.png'
-            />
+export default function Document() {
+  const NEXT_PUBLIHC_BAIDU_ID = process.env.NEXT_PUBLIHC_BAIDU_ID
+  return (
+    <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+      <Html lang='en'>
+        <Head>
+          <link rel='shortcut icon' href='/favicon.ico' />
+          <link rel='icon' type='image/png' sizes='32x32' href='favicon.png' />
 
-            <link rel='manifest' href='/manifest.json' />
-            {NEXT_PUBLIHC_BAIDU_ID && (
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `var _hmt = _hmt || [];
+          <link rel='manifest' href='/manifest.json' />
+          {NEXT_PUBLIHC_BAIDU_ID && (
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `var _hmt = _hmt || [];
               (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?${NEXT_PUBLIHC_BAIDU_ID}";
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
               })();`
-                }}
-              />
-            )}
-          </Head>
+              }}
+            />
+          )}
+        </Head>
 
-          <body>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+        <body>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
 /** Inlined version of noflash.js from use-dark-mode */
 ;(function () {
   var storageKey = 'darkMode'
@@ -73,13 +67,12 @@ export default class MyDocument extends Document {
   }
 })();
 `
-              }}
-            />
-            <Main />
-            <NextScript />
-          </body>
-        </Html>
-      </IconContext.Provider>
-    )
-  }
+            }}
+          />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    </IconContext.Provider>
+  )
 }
