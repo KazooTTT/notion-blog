@@ -2,6 +2,7 @@ import * as React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { IconContext } from '@react-icons/all-files'
+const NEXT_PUBLIHC_BAIDU_ID = process.env.NEXT_PUBLIHC_BAIDU_ID
 
 export default class MyDocument extends Document {
   render() {
@@ -18,6 +19,19 @@ export default class MyDocument extends Document {
             />
 
             <link rel='manifest' href='/manifest.json' />
+            {NEXT_PUBLIHC_BAIDU_ID && (
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?${NEXT_PUBLIHC_BAIDU_ID}";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();`
+                }}
+              />
+            )}
           </Head>
 
           <body>
