@@ -140,6 +140,10 @@
   margin: 2em 0;
 }
 
+.notion-collection-card-cover > img {
+  object-fit: cover;
+}
+
 @media only screen and (max-width: 920px) {
   .index-page.notion-page {
     padding-left: 2vw;
