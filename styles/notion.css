@@ -361,6 +361,11 @@
   border-radius: 50%;
 }
 
+.notion-page-icon-hero.notion-page-icon-image .notion-page-icon{
+  border-radius: 50%;
+}
+
+
 .notion-header {
   background: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: saturate(180%) blur(16px);
