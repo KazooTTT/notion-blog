@@ -1,4 +1,3 @@
-import { lazy } from 'react'
 import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
@@ -54,6 +53,10 @@ export default siteConfig({
   // navigationStyle: 'default',
   navigationStyle: 'custom',
   navigationLinks: [
+    {
+      title: '项目安利',
+      pageId: '406ae0b025554d1399718daa5a7282d0'
+    },
     {
       title: 'About',
       pageId: '54de916b2a7e46ca9d91ab8d38087245'
