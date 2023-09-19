@@ -55,7 +55,7 @@ export default siteConfig({
   navigationLinks: [
     {
       title: '项目安利',
-      pageId: '406ae0b025554d1399718daa5a7282d0'
+      pageId: 'c4058ec70cf0467a85e404020615dd42'
     },
     {
       title: 'About',
