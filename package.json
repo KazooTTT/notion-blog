@@ -58,7 +58,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.5.2",
+    "@next/bundle-analyzer": "^13.5.3",
     "@trivago/prettier-plugin-sort-imports": "^3.4.0",
     "@types/node": "^20.6.3",
     "@types/react": "^18.2.21",
