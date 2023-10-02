@@ -72,8 +72,8 @@ dependencies:
     specifier: ^7.1.1
     version: 7.1.1
   posthog-js:
-    specifier: ^1.81.0
-    version: 1.81.0
+    specifier: ^1.81.2
+    version: 1.81.2
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -963,10 +963,6 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 20.8.0
-    dev: false
-
-  /@types/node@20.7.2:
-    resolution: {integrity: sha512-RcdC3hOBOauLP+r/kRt27NrByYtDjsXyAuSbR87O6xpsvi763WI+5fbSIvYJrXnt9w4RuxhV6eAXfIs7aaf/FQ==}
     dev: false
 
   /@types/node@20.8.0:
@@ -2948,7 +2944,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.7.2
+      '@types/node': 20.8.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -3781,8 +3777,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /posthog-js@1.81.0:
-    resolution: {integrity: sha512-Ax+qzJQtJjViZ9jJPS3sf2vlDd/xZHVHcEik3tEOY0LXLgJZhbUymqW1Lo3sqsKRvKjHSidPsodTpm5/K63h+Q==}
+  /posthog-js@1.81.2:
+    resolution: {integrity: sha512-3QLdn7koy7n+nj23HAr/KbVYwOmQcCn0K/5zlaWazef8t4s5L8JgJSMkw96pDRuAYfYcUCr9yWLQDpDakPiIHQ==}
     dependencies:
       fflate: 0.4.8
     dev: false
