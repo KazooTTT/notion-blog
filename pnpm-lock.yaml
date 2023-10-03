@@ -72,8 +72,8 @@ dependencies:
     specifier: ^7.1.1
     version: 7.1.1
   posthog-js:
-    specifier: ^1.81.2
-    version: 1.81.2
+    specifier: ^1.81.3
+    version: 1.81.3
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -3777,8 +3777,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /posthog-js@1.81.2:
-    resolution: {integrity: sha512-3QLdn7koy7n+nj23HAr/KbVYwOmQcCn0K/5zlaWazef8t4s5L8JgJSMkw96pDRuAYfYcUCr9yWLQDpDakPiIHQ==}
+  /posthog-js@1.81.3:
+    resolution: {integrity: sha512-Aqqcj1n1KqZlxMaYYfd5OJC2BMIAP927+f7XqEbEplYJKigGTbQ6ygt2UeSJZe3xcDMxyDK4jxOWy68kD3YIlw==}
     dependencies:
       fflate: 0.4.8
     dev: false
