@@ -27,7 +27,7 @@
   "dependencies": {
     "@fisch0920/use-dark-mode": "^2.4.0",
     "@giscus/react": "^2.3.0",
-    "@keyvhq/core": "^1.6.26",
+    "@keyvhq/core": "^2.1.0",
     "@keyvhq/redis": "^2.1.0",
     "@react-icons/all-files": "^4.1.0",
     "@sentry/nextjs": "^7.73.0",
