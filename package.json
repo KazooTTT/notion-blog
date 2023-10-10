@@ -31,7 +31,7 @@
     "@keyvhq/redis": "^2.1.0",
     "@react-icons/all-files": "^4.1.0",
     "@sentry/nextjs": "^7.73.0",
-    "@vercel/analytics": "^1.0.2",
+    "@vercel/analytics": "^1.1.0",
     "@vercel/og": "^0.5.17",
     "canvas": "^2.11.2",
     "classnames": "^2.3.2",
