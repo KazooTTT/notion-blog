@@ -4,13 +4,16 @@ import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
+import { Analytics } from '@vercel/analytics/react'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
+import { GoogleAnalytics, event } from 'nextjs-google-analytics'
 import posthog from 'posthog-js'
 // used for code syntax highlighting (optional)
 import 'prismjs/themes/prism-coy.css'
 // core styles shared by all of react-notion-x (required)
 import 'react-notion-x/src/styles.css'
+import 'styles/giscus.css'
 import 'styles/global.css'
 // this might be better for dark mode
 // import 'prismjs/themes/prism-okaidia.css'
@@ -18,7 +21,6 @@ import 'styles/global.css'
 import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
-import 'styles/giscus.css'
 
 import { bootstrap } from '@/lib/bootstrap-client'
 import {
@@ -28,8 +30,6 @@ import {
   posthogConfig,
   posthogId
 } from '@/lib/config'
-import { Analytics } from '@vercel/analytics/react'
-import { GoogleAnalytics, event } from 'nextjs-google-analytics'
 
 if (!isServer) {
   bootstrap()

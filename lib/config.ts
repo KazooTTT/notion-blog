@@ -178,8 +178,6 @@ export const posthogConfig: Partial<PostHogConfig> = {
   api_host: 'https://app.posthog.com'
 }
 
-
-
 function cleanPageUrlMap(
   pageUrlMap: PageUrlOverridesMap,
   {
@@ -227,7 +225,6 @@ function invertPageUrlOverrides(
     }
   }, {})
 }
-
 
 export const logDebug = false
 

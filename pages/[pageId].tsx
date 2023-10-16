@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
-import Comment from '@/components/Comment'
+import { useRouter } from 'next/router'
 
+import Comment from '@/components/Comment'
+import { Loading } from '@/components/Loading'
 import { NotionPage } from '@/components/NotionPage'
 import { domain, isDev } from '@/lib/config'
 import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { PageProps, Params } from '@/lib/types'
-import { Loading } from '@/components/Loading'
-import { useRouter } from 'next/router'
 
 export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   context

@@ -1,7 +1,7 @@
 import * as React from 'react'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 import { IconContext } from '@react-icons/all-files'
-import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   const NEXT_PUBLIHC_BAIDU_ID = process.env.NEXT_PUBLIHC_BAIDU_ID

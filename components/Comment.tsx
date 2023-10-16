@@ -1,9 +1,12 @@
-import { giscusProps } from '@/lib/config'
-import Giscus from '@giscus/react'
 import React from 'react'
-import styles from './giscus.module.css'
-import { useDarkMode } from '@/lib/use-dark-mode'
+
+import Giscus from '@giscus/react'
 import { cs } from 'react-notion-x'
+
+import { giscusProps } from '@/lib/config'
+import { useDarkMode } from '@/lib/use-dark-mode'
+
+import styles from './giscus.module.css'
 
 export default function Comment() {
   const { isDarkMode } = useDarkMode()

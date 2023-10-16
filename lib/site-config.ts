@@ -1,4 +1,5 @@
 import { GiscusProps } from '@giscus/react'
+
 import * as types from './types'
 
 export interface SiteConfig {
