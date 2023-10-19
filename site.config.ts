@@ -54,16 +54,28 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: '项目安利',
+      title: '博文',
+      pageId: '3e5c0b67923444efaa045926d8355cd1'
+    },
+    {
+      title: '项目',
+      pageId: '6fcb144bb98f4c70821fdfe30f298a74'
+    },
+    {
+      title: '周报',
       pageId: 'c4058ec70cf0467a85e404020615dd42'
     },
     {
-      title: 'About',
+      title: '安利',
+      pageId: 'c4058ec70cf0467a85e404020615dd42'
+    },
+    {
+      title: '关于我',
       pageId: '54de916b2a7e46ca9d91ab8d38087245'
     },
     {
-      title: 'Contact',
-      pageId: 'fad97689ee4144e78613f86e3367779e'
+      title: '订阅',
+      url: '/feed'
     }
   ],
 
