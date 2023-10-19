@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import got from 'got'
 import { PageBlock } from 'notion-types'
 import {
   getBlockIcon,
@@ -14,6 +13,7 @@ import * as libConfig from '@/lib/config'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
 import { NotionPageInfo } from '@/lib/types'
+import { getCompatibleImageUrl } from '@/lib/image'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
@@ -119,36 +119,3 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.status(200).json(pageInfo)
 }
 
-async function isUrlReachable(url: string | null): Promise<boolean> {
-  if (!url) {
-    return false
-  }
-
-  try {
-    await got.head(url)
-    return true
-  } catch (err) {
-    return false
-  }
-}
-
-async function getCompatibleImageUrl(
-  url: string | null,
-  fallbackUrl: string | null
-): Promise<string | null> {
-  const image = (await isUrlReachable(url)) ? url : fallbackUrl
-
-  if (image) {
-    const imageUrl = new URL(image)
-
-    if (imageUrl.host === 'images.unsplash.com') {
-      if (!imageUrl.searchParams.has('w')) {
-        imageUrl.searchParams.set('w', '1200')
-        imageUrl.searchParams.set('fit', 'max')
-        return imageUrl.toString()
-      }
-    }
-  }
-
-  return image
-}
