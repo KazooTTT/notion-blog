@@ -63,7 +63,7 @@ export default siteConfig({
     },
     {
       title: '周报',
-      pageId: 'c4058ec70cf0467a85e404020615dd42'
+      pageId: 'a8c6ff27e66a4c8a9051ea745deb4bf6'
     },
     {
       title: '安利',
@@ -74,7 +74,7 @@ export default siteConfig({
       pageId: '54de916b2a7e46ca9d91ab8d38087245'
     },
     {
-      title: '订阅',
+      title: 'rss',
       url: '/feed'
     }
   ],
