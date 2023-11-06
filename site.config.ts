@@ -58,16 +58,16 @@ export default siteConfig({
       pageId: '3e5c0b67923444efaa045926d8355cd1'
     },
     {
+      title: '笔记',
+      pageId: 'c674f1f32a7e4973b0c6bf303e616bff'
+    },
+    {
       title: '项目',
       pageId: 'a1a4b1dc2ad84a34a2ebef0ddbf00c89'
     },
     {
       title: '周报',
       pageId: '160446fe5c364d0e9eead6432d3a3dcc'
-    },
-    {
-      title: '笔记',
-      pageId: 'c674f1f32a7e4973b0c6bf303e616bff'
     },
     {
       title: '生活&杂谈',
