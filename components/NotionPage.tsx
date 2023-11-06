@@ -32,6 +32,7 @@ import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 import RootPageContent from './RootPageContent'
+import React from 'react'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components

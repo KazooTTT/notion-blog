@@ -30,6 +30,7 @@ import {
   posthogConfig,
   posthogId
 } from '@/lib/config'
+import React from 'react'
 
 if (!isServer) {
   bootstrap()

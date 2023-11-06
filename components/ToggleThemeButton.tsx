@@ -3,6 +3,7 @@ import cs from 'classnames'
 import styles from '@/components/styles.module.css'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+import React from 'react'
 
 export const ToggleThemeButton = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
