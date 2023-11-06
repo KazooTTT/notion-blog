@@ -54,7 +54,7 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: '博文',
+      title: '技术分享',
       pageId: '3e5c0b67923444efaa045926d8355cd1'
     },
     {
@@ -63,11 +63,15 @@ export default siteConfig({
     },
     {
       title: '周报',
-      pageId: 'a8c6ff27e66a4c8a9051ea745deb4bf6'
+      pageId: '160446fe5c364d0e9eead6432d3a3dcc'
     },
     {
-      title: '安利',
-      pageId: 'c4058ec70cf0467a85e404020615dd42'
+      title: '学习笔记',
+      pageId: 'c674f1f32a7e4973b0c6bf303e616bff'
+    },
+    {
+      title: '生活&杂谈',
+      pageId: '86a8f228bd244ee3bd2c332bbcb5bb3b'
     },
     {
       title: '关于我',
