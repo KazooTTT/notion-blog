@@ -54,7 +54,7 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: '技术分享',
+      title: '技术',
       pageId: '3e5c0b67923444efaa045926d8355cd1'
     },
     {
@@ -66,7 +66,7 @@ export default siteConfig({
       pageId: '160446fe5c364d0e9eead6432d3a3dcc'
     },
     {
-      title: '学习笔记',
+      title: '笔记',
       pageId: 'c674f1f32a7e4973b0c6bf303e616bff'
     },
     {
