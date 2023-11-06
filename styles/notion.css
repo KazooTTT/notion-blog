@@ -164,6 +164,10 @@
     display: none !important;
   }
 }
+.notion-full-width{
+  padding-left: 0;
+  padding-right: 0;
+}
 
 .notion .notion-page-icon-cover {
   margin-left: auto;
