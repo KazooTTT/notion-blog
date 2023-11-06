@@ -34,7 +34,6 @@
     "@sentry/nextjs": "^7.73.0",
     "@vercel/analytics": "^1.1.0",
     "@vercel/og": "^0.5.17",
-    "canvas": "^2.11.2",
     "classnames": "^2.3.2",
     "date-fns": "^2.30.0",
     "expiry-map": "^2.0.0",
@@ -57,8 +56,7 @@
     "react-notion-x": "^6.16.0",
     "react-tweet-embed": "^2.0.0",
     "react-use": "^17.4.0",
-    "rss": "^1.2.2",
-    "sharp": "^0.32.6"
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.5.4",
