@@ -1,5 +1,5 @@
 // global styles shared across the entire site
-import * as React from 'react'
+
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { useRouter } from 'next/router'
 

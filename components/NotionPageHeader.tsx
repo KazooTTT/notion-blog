@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import * as types from 'notion-types'
 import cs from 'classnames'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'

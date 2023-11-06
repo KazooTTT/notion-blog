@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Image from 'next/image'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'

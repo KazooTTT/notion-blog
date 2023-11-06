@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
