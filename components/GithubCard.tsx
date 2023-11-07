@@ -11,12 +11,7 @@ export const GithubCard = () => {
       href={`https://github.com/${githubUserName}`}
     >
       <GitHubIcon className='h-8 w-8 mb-2' />
-      <GitHubCalendar
-        username={githubUserName}
-        weekStart={1}
-        hideColorLegend
-        hideTotalCount
-      />
+      <GitHubCalendar username={githubUserName} weekStart={1} hideColorLegend />
     </Link>
   ) : (
     <></>
