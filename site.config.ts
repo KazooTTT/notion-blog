@@ -49,6 +49,7 @@ export default siteConfig({
     '/weekly': '160446fe5c364d0e9eead6432d3a3dcc',
     '/others': '86a8f228bd244ee3bd2c332bbcb5bb3b',
     '/about': '54de916b2a7e46ca9d91ab8d38087245',
+    '/recommend': 'c4058ec70cf0467a85e404020615dd42'
   },
   // pageUrlOverrides: null,
 
@@ -74,8 +75,12 @@ export default siteConfig({
       pageId: '160446fe5c364d0e9eead6432d3a3dcc'
     },
     {
-      title: '生活&杂谈',
+      title: '随笔',
       pageId: '86a8f228bd244ee3bd2c332bbcb5bb3b'
+    },
+    {
+      title: '安利',
+      pageId: 'c4058ec70cf0467a85e404020615dd42'
     },
     {
       title: '关于',
