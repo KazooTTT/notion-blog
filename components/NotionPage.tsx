@@ -197,103 +197,107 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const isBlogPost =
     block?.type === 'page' && block?.parent_table === 'collection'
 
-  const showTableOfContents = !!isBlogPost
-  const minTableOfContentsItems = 3
+    const showTableOfContents = !!isBlogPost
+    const minTableOfContentsItems = 30
 
-  const pageAside = React.useMemo(
-    () => (
-      <PageAside block={block} recordMap={recordMap} isBlogPost={isBlogPost} />
-    ),
-    [block, recordMap, isBlogPost]
-  )
+    const pageAside = React.useMemo(
+      () => (
+        <PageAside
+          block={block}
+          recordMap={recordMap}
+          isBlogPost={isBlogPost}
+        />
+      ),
+      [block, recordMap, isBlogPost]
+    )
 
-  const footer = React.useMemo(
-    () => (
+    const footer = React.useMemo(
+      () => (
+        <>
+          {isRootPage && <RootPageContent></RootPageContent>}
+          <Footer />
+        </>
+      ),
+      [isRootPage]
+    )
+
+    if (router.isFallback) {
+      return <Loading />
+    }
+
+    if (error || !site || !block) {
+      return <Page404 site={site} pageId={pageId} error={error} />
+    }
+
+    const title = getBlockTitle(block, recordMap) || site.name
+
+    config.logDebug &&
+      console.log('notion page', {
+        isDev: config.isDev,
+        title,
+        pageId,
+        rootNotionPageId: site.rootNotionPageId,
+        recordMap
+      })
+
+    if (!config.isServer) {
+      // add important objects to the window global for easy debugging
+      const g = window as any
+      g.pageId = pageId
+      g.recordMap = recordMap
+      g.block = block
+    }
+
+    const canonicalPageUrl =
+      !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
+
+    const socialImage = mapImageUrl(
+      getPageProperty<string>('Social Image', block, recordMap) ||
+        (block as PageBlock).format?.page_cover ||
+        config.defaultPageCover,
+      block
+    )
+
+    const socialDescription =
+      getPageProperty<string>('Description', block, recordMap) ||
+      config.description
+
+    return (
       <>
-        {isRootPage && <RootPageContent></RootPageContent>}
-        <Footer />
+        <PageHead
+          pageId={pageId}
+          site={site}
+          title={title}
+          description={socialDescription}
+          image={socialImage}
+          url={canonicalPageUrl}
+        />
+
+        {isLiteMode && <BodyClassName className='notion-lite' />}
+        {isDarkMode && <BodyClassName className='dark-mode' />}
+
+        <NotionRenderer
+          bodyClassName={cs(styles.notion, 'index-page')}
+          darkMode={isDarkMode}
+          components={components}
+          recordMap={recordMap}
+          rootPageId={site.rootNotionPageId}
+          rootDomain={site.domain}
+          fullPage={!isLiteMode}
+          previewImages={!!recordMap.preview_images}
+          showCollectionViewDropdown={false}
+          showTableOfContents={showTableOfContents}
+          minTableOfContentsItems={minTableOfContentsItems}
+          defaultPageIcon={config.defaultPageIcon}
+          defaultPageCover={config.defaultPageCover}
+          defaultPageCoverPosition={config.defaultPageCoverPosition}
+          mapPageUrl={siteMapPageUrl}
+          mapImageUrl={mapImageUrl}
+          searchNotion={config.isSearchEnabled ? searchNotion : null}
+          pageAside={pageAside}
+          footer={footer}
+        />
+        {config.showGithubShareButton && <GitHubShareButton />}
       </>
-    ),
-    [isRootPage]
-  )
-
-  if (router.isFallback) {
-    return <Loading />
-  }
-
-  if (error || !site || !block) {
-    return <Page404 site={site} pageId={pageId} error={error} />
-  }
-
-  const title = getBlockTitle(block, recordMap) || site.name
-
-  config.logDebug &&
-    console.log('notion page', {
-      isDev: config.isDev,
-      title,
-      pageId,
-      rootNotionPageId: site.rootNotionPageId,
-      recordMap
-    })
-
-  if (!config.isServer) {
-    // add important objects to the window global for easy debugging
-    const g = window as any
-    g.pageId = pageId
-    g.recordMap = recordMap
-    g.block = block
-  }
-
-  const canonicalPageUrl =
-    !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
-
-  const socialImage = mapImageUrl(
-    getPageProperty<string>('Social Image', block, recordMap) ||
-      (block as PageBlock).format?.page_cover ||
-      config.defaultPageCover,
-    block
-  )
-
-  const socialDescription =
-    getPageProperty<string>('Description', block, recordMap) ||
-    config.description
-
-  return (
-    <>
-      <PageHead
-        pageId={pageId}
-        site={site}
-        title={title}
-        description={socialDescription}
-        image={socialImage}
-        url={canonicalPageUrl}
-      />
-
-      {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
-
-      <NotionRenderer
-        bodyClassName={cs(styles.notion, 'index-page')}
-        darkMode={isDarkMode}
-        components={components}
-        recordMap={recordMap}
-        rootPageId={site.rootNotionPageId}
-        rootDomain={site.domain}
-        fullPage={!isLiteMode}
-        previewImages={!!recordMap.preview_images}
-        showCollectionViewDropdown={false}
-        showTableOfContents={showTableOfContents}
-        minTableOfContentsItems={minTableOfContentsItems}
-        defaultPageIcon={config.defaultPageIcon}
-        defaultPageCover={config.defaultPageCover}
-        defaultPageCoverPosition={config.defaultPageCoverPosition}
-        mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
-        searchNotion={config.isSearchEnabled ? searchNotion : null}
-        pageAside={pageAside}
-        footer={footer}
-      />
-      {config.showGithubShareButton && <GitHubShareButton />}
-    </>
-  )
+    )
 }
