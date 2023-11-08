@@ -78,7 +78,7 @@ export default siteConfig({
       pageId: '86a8f228bd244ee3bd2c332bbcb5bb3b'
     },
     {
-      title: '关于我',
+      title: '关于',
       pageId: '54de916b2a7e46ca9d91ab8d38087245'
     },
     {
