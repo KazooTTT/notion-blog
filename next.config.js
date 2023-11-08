@@ -20,7 +20,7 @@ module.exports = withBundleAnalyzer({
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config) => {
     config.resolve.alias.canvas = false
     config.resolve.alias.encoding = false
     return config
@@ -28,7 +28,7 @@ module.exports = withBundleAnalyzer({
 })
 
 // Injected content via Sentry wizard below
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withSentryConfig } = require('@sentry/nextjs')
 
 module.exports = withSentryConfig(
