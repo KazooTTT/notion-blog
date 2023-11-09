@@ -42,7 +42,7 @@
     "got": "^12.6.1",
     "isomorphic-unfetch": "^4.0.2",
     "lqip-modern": "^2.0.0",
-    "next": "^13.4.19",
+    "next": "^14.0.1",
     "nextjs-google-analytics": "^2.3.3",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
